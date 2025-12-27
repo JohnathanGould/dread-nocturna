@@ -3,14 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Dread Nocturna — Enter the Veil. Follow the Chronicle." />
+
+  <!-- Primary SEO -->
+  <title>Dread Nocturna | Official Chronicle Portal</title>
+  <meta name="description" content="Dread Nocturna is a transmedia chronicle of resonance, rupture, and survival—told through music, graphic chronicles, and narrative fragments. Enter the Veil. Follow the sequence." />
+  <link rel="canonical" href="https://dreadnocturna.com/" />
+
+  <!-- Indexing -->
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#05060a" />
-  <title>Dread Nocturna</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dread Nocturna | Official Chronicle Portal" />
+  <meta property="og:description" content="A transmedia chronicle of resonance, rupture, and survival—music, graphic chronicles, and fragments. Enter the Veil. Follow the sequence." />
+  <meta property="og:url" content="https://dreadnocturna.com/" />
+  <!-- Replace with an uploaded image path in your repo (recommended 1200x630) -->
+  <meta property="og:image" content="https://dreadnocturna.com/og-image.jpg" />
+  <meta property="og:image:alt" content="Dread Nocturna — night sky over a city skyline with moonlight." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dread Nocturna | Official Chronicle Portal" />
+  <meta name="twitter:description" content="A transmedia chronicle of resonance, rupture, and survival—music, graphic chronicles, and fragments." />
+  <meta name="twitter:image" content="https://dreadnocturna.com/og-image.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dread Nocturna",
+    "url": "https://dreadnocturna.com/",
+    "description": "Dread Nocturna is a transmedia chronicle of resonance, rupture, and survival—told through music, graphic chronicles, and narrative fragments.",
+    "inLanguage": "en"
+  }
+  </script>
 
   <style>
     :root{
@@ -168,14 +201,16 @@
       backdrop-filter: blur(8px);
     }
 
-    h1{
-      margin: 18px 0 10px;
-      font-family: Unbounded, Inter, sans-serif;
-      font-weight: 800;
-      letter-spacing: 1.35px;
-      line-height: 1.02;
-      font-size: clamp(36px, 5vw, 62px);
-      text-transform: uppercase;
+    /* Logo Image Header */
+    .logo{
+      margin: 18px 0 14px;
+      max-width: 760px;
+    }
+    .logo img{
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.6));
     }
 
     .sub{
@@ -261,7 +296,7 @@
       .grid2{ grid-template-columns: 1fr; }
     }
 
-    /* Mailchimp form */
+    /* Mailchimp */
     form.mail{
       margin-top: 10px;
       display:flex;
@@ -282,7 +317,6 @@
     form.mail input[type="email"]:focus,
     .btn:focus{ box-shadow: var(--focus); outline:none; }
 
-    /* Hide bot trap without layout shift */
     .hp-field{ position:absolute; left:-5000px; }
 
     .fine{
@@ -310,6 +344,19 @@
     .reveal{ opacity:0; transform: translateY(10px); transition: 650ms ease; }
     .reveal.on{ opacity:1; transform: translateY(0); }
 
+    /* Visually hidden but SEO + screen reader accessible */
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
     @media (prefers-reduced-motion: reduce){
       .reveal{ opacity:1; transform:none; transition:none; }
       .btn:hover{ transform:none; }
@@ -325,7 +372,7 @@
   <header>
     <div class="wrap">
       <div class="nav">
-        <a class="brand" href="#top">
+        <a class="brand" href="#top" aria-label="Dread Nocturna">
           <span class="mark" aria-hidden="true"></span>
           <span>Dread Nocturna</span>
         </a>
@@ -345,35 +392,48 @@
       <div class="grid">
 
         <!-- HERO -->
-        <section class="card pad-lg reveal" aria-label="Hero">
+        <section class="card pad-lg reveal" aria-label="Dread Nocturna Chronicle Portal">
           <div class="kicker">
             <span class="pill">Chronicle Portal</span>
             <span class="pill">Resonance • Rupture • Survival</span>
           </div>
 
-          <h1>Dread<br/>Nocturna</h1>
+          <!-- Strong SEO: real H1 exists, but the visible title is an image -->
+          <h1 class="sr-only">Dread Nocturna</h1>
+
+          <!-- Visible image title -->
+          <!-- Upload your banner image to your repo root and name it exactly as below -->
+          <div class="logo">
+            <img
+              src="dread-nocturna-title.jpg"
+              alt="Dread Nocturna"
+              width="1920"
+              height="550"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
 
           <p class="sub">
-            The night the Veil tore, the city called it containment.
-            The Core Keepers called it stability.
-            The survivors learned a simpler word: <em>hunger</em>.
+            Dread Nocturna is a transmedia chronicle of resonance, rupture, and survival—told through music,
+            graphic chronicles, and narrative fragments. Enter the Veil. Follow the sequence.
           </p>
 
           <div class="cta">
-            <a class="btn primary js-scroll" href="#listen">
+            <a class="btn primary js-scroll" href="#listen" aria-label="Listen to Dread Nocturna">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M9 18V6l12 6-12 6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
               </svg>
               Enter (Listen)
             </a>
-            <a class="btn js-scroll" href="#read">
+            <a class="btn js-scroll" href="#read" aria-label="Read the Dread Nocturna chronicle">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M7 4h12v16H7a2 2 0 0 0-2 2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7"/>
                 <path d="M7 20h12" stroke="currentColor" stroke-width="1.7"/>
               </svg>
               Read the Chronicle
             </a>
-            <a class="btn js-scroll" href="#join">
+            <a class="btn js-scroll" href="#join" aria-label="Join the Dread Nocturna email list">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7"/>
                 <path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
@@ -382,7 +442,7 @@
             </a>
           </div>
 
-          <div class="divider" aria-label="Principles">
+          <div class="divider" aria-label="Dread Nocturna visual principles">
             <span><span class="dot" aria-hidden="true"></span> Color as residue, never spectacle.</span>
             <span><span class="dot" aria-hidden="true"></span> Neon only as violation.</span>
             <span><span class="dot" aria-hidden="true"></span> Built for QR entry.</span>
@@ -390,7 +450,8 @@
         </section>
 
         <!-- PANELS -->
-        <aside class="stack" aria-label="Panels">
+        <aside class="stack" aria-label="Quick entry panels">
+
           <section class="card panel pad-sm reveal anchor" id="listen" aria-label="Listen">
             <h2 class="title">Listen</h2>
             <p>
@@ -417,6 +478,7 @@
             </div>
             <p class="fine">Swap “Soon” links when you publish destinations.</p>
           </section>
+
         </aside>
       </div>
 
@@ -434,7 +496,7 @@
           </div>
         </div>
 
-        <div class="card panel pad-sm reveal anchor" id="join" aria-label="Join">
+        <div class="card panel pad-sm reveal anchor" id="join" aria-label="Join the Signal">
           <h2 class="title">Join the Signal</h2>
           <p>
             Release alerts. Story fragments. Soundtrack drops.
@@ -449,7 +511,6 @@
                 novalidate>
             <input type="email" name="EMAIL" placeholder="you@domain.com" required />
 
-            <!-- Bot trap (Mailchimp requires this) -->
             <div class="hp-field" aria-hidden="true">
               <input type="text" name="b_3e2a8829d2d2b1cf1a85186a3_97abe19e2c" tabindex="-1" value="">
             </div>
@@ -463,7 +524,7 @@
         </div>
       </section>
 
-      <footer class="foot">
+      <footer class="foot" aria-label="Footer">
         <div>© <span id="year"></span> Dread Nocturna</div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" style="padding:8px 10px; border-radius:999px;" href="mailto:contact@dreadnocturna.com">Email</a>
@@ -473,10 +534,8 @@
   </main>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Smooth scroll for nav links
     document.querySelectorAll(".js-scroll").forEach(a => {
       a.addEventListener("click", (e) => {
         const href = a.getAttribute("href");
@@ -488,7 +547,6 @@
       });
     });
 
-    // Reveal on scroll
     const els = Array.from(document.querySelectorAll(".reveal"));
     const io = new IntersectionObserver((entries) => {
       entries.forEach(en => { if (en.isIntersecting) en.target.classList.add("on"); });
